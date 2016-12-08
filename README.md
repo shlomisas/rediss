@@ -16,8 +16,8 @@ Required Redis 3.2.6+
 
 ### **Data types**
 
-* [Simple object](docs/SimpleObject.md)
-* [Set](#set-dt)
+* [Simple object](docs/simpleObject.md)
+* [Set](docs/set.md)
 
 ### **Errors**
 
