@@ -1,6 +1,6 @@
 {
   "name": "rediss",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple Redis toolkit",
   "main": "index.js",
   "scripts": {
@@ -28,6 +28,20 @@
     "babel-preset-stage-0": "^6.16.0",
     "babel-register": "^6.18.0",
     "chai": "^3.5.0",
-    "mocha": "^3.2.0"
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-bump": "^2.5.1",
+    "gulp-extend": "^0.2.0",
+    "gulp-git": "^1.12.0",
+    "gulp-load-plugins": "^1.4.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.11",
+    "mkdirp": "^0.5.1",
+    "mocha": "^3.2.0",
+    "run-sequence": "^1.2.2",
+    "yargs": "^6.5.0"
   }
 }
