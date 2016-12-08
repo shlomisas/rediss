@@ -43,5 +43,8 @@
     "mocha": "^3.2.0",
     "run-sequence": "^1.2.2",
     "yargs": "^6.5.0"
+  },
+  "dependencies": {
+    "ioredis": "^2.4.2"
   }
 }
