@@ -1,52 +1,29 @@
-<a id="top"></a>
-# Simple Redis Toolkit (rediss)
+# **Developer friendly Redis toolkit**
 
 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] 
 <!--[![Coveralls Status][coveralls-image]][coveralls-url] -->
 <!--[![OpenCollective Backers][backer-badge]][backer-url] [![OpenCollective Sponsors][sponsor-badge]][sponsor-url] -->
 
-This project gives the ability to use redis with straight forward data-types without remember the Redis API.
+This project gives the ability to use Redis with straight forward data-types objects without remember the native Redis API.
 
-**Motivation:**
+Required Redis 3.2.6+ 
 
-```javascript
+## Install 
 
-let redisObj = new RedisObj('mykey');
+`npm i rediss`
 
-await redisObj.set({
-    a: 5,
-    b: 6
-});
+## Docs
 
-let data = await redisObj.get('mykey');
+### **Data types**
 
-console.log(data); 
-
-// Will print '{a: 5, b: 6}'
-```
-
-**Data types**
-
-* [Simple object](#simpleobj-dt)
+* [Simple object](docs/SimpleObject.md)
 * [Set](#set-dt)
 
-Simple Object {#simpleobj-dt}
-df
-d f
-df ds
-fds
- fsd
- f sd
- fds 
- fsd
- f sd
- fds
-  fsd
-  fds
-  f fdsf
-  df
-  sdf
-sdfdfdsfd [top](#top)
+### **Errors**
+
+**RedisError**
+
+A readonly error that contain the reason something has failed
 
 [downloads-image]: https://img.shields.io/npm/dm/rediss.svg
 [npm-url]: https://www.npmjs.com/package/rediss
