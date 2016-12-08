@@ -1,0 +1,31 @@
+{
+  "name": "rediss",
+  "version": "1.0.0",
+  "description": "Simple Redis toolkit",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-core/register test/**/*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shlomisas/rediss.git"
+  },
+  "keywords": [
+    "Redis",
+    "OOP"
+  ],
+  "author": "Shlomi Sasson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shlomisas/rediss/issues"
+  },
+  "homepage": "https://github.com/shlomisas/rediss#readme",
+  "devDependencies": {
+    "babel-register": "^6.18.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-class-properties": "^6.19.0",
+    "babel-preset-node6": "^11.0.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "chai": "^3.5.0"
+  }
+}

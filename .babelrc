@@ -1,0 +1,10 @@
+{
+    "plugins": [
+        "add-module-exports",
+        "transform-async-to-generator"
+    ],
+    "presets": [
+        "node6",
+        "stage-0"
+    ]
+}
