@@ -1,30 +1,33 @@
-# **Developer friendly Redis toolkit**
+# **User Friendly Redis Toolkit**
 
 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] 
 <!--[![Coveralls Status][coveralls-image]][coveralls-url] -->
 <!--[![OpenCollective Backers][backer-badge]][backer-url] [![OpenCollective Sponsors][sponsor-badge]][sponsor-url] -->
 
-This project gives the ability to use Redis with straight forward data-types objects without remember the native Redis API.
-
-Tested on Redis v2.8.2400
+Use Redis' commands straight-forward, with no need to remember the complicated Redis API in mind.
 
 ## Contribute
 
-Since wrap all Redis can take long time, therefore, if someone wants to contribute it'll be great help :) feel free to send pull requests..
+Since wrap all Redis commands can take long time, so feel free to contribute ;)
+
+## Support
+
+Tested on Redis 2.8.2400
 
 ## Install 
 
-`npm i rediss`
+`npm i rediss -S`
 
 ## Docs 
 
 ### **Data types**
 
-_Note: most of types can save mixed JavaScript types, it's means saving some value will fetch it exactly with the same type, 
+_Note: objects can save mixed JavaScript data, it's means that when saving a value will fetch exactly as saved - with the same type, 
 objects will internally `JSON.stringify` before save and `JSON.parse` after fetch_
 
-* [Simple object](docs/simpleObject.md)
-* [Set](docs/set.md)
+* [Redis Simple object](docs/redisSimpleObject.md)
+* [Redis Set](docs/redisSet.md)
+* [Redis Hash](docs/redisHash.md)
 
 ### **Errors**
 
