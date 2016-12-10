@@ -2,7 +2,7 @@ sudo: false
 language: node_js
 node_js:
   - "6"
-#after_script:
-#  - npm run coveralls
+services:
+  - redis-server
 git:
   depth: 10
