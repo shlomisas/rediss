@@ -11,42 +11,42 @@ export default class RedisSet extends RedisBase{
     async add(data){
         this.beforeAction();
 
-        return this._client.sadd(this._key, RedisHelper.encodeRedisData(data));
+        return this.raw('sadd', this._key, RedisHelper.encodeRedisData(data));
     }
 
     async remove(data){
         this.beforeAction();
-        return this._client.srem(this._key, RedisHelper.encodeRedisData(data));
+        return this.raw('srem', this._key, RedisHelper.encodeRedisData(data));
     }
 
-    async exist(data){
+    async exists(data){
         this.beforeAction();
-        return !!await this._client.sismember(this._key, RedisHelper.encodeRedisData(data));
+        return !!await this.raw('sismember', this._key, RedisHelper.encodeRedisData(data));
     }
 
     async size(){
         this.beforeAction();
-        return this._client.scard(this._key);
+        return this.raw('scard', this._key);
     }
 
     async getAll(){
         this.beforeAction();
 
-        let data = await this._client.smembers(this._key);
+        let data = await this.raw('smembers', this._key);
         return RedisHelper.decodeArrayOfRedisData(data);
     }
 
     async getRands(count = 1){
         this.beforeAction();
 
-        let data = await this._client.srandmember(this._key, count);
+        let data = await this.raw('srandmember', this._key, count);
         return RedisHelper.decodeArrayOfRedisData(data);
     }
 
     async popRand(){
         this.beforeAction();
 
-        let data = await this._client.spop(this._key);
+        let data = await this.raw('spop', this._key);
         return RedisHelper.decodeRedisData(data);
     }
 }

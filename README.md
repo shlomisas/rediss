@@ -8,11 +8,15 @@ This project gives the ability to use Redis with straight forward data-types obj
 
 Tested on Redis v2.8.2400
 
+## Contribute
+
+Since wrap all Redis can take long time, therefore, if someone wants to contribute it'll be great help :) feel free to send pull requests..
+
 ## Install 
 
 `npm i rediss`
 
-## Docs
+## Docs 
 
 ### **Data types**
 

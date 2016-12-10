@@ -18,6 +18,16 @@ export class RedisMissingClientError extends RedisError{
     }
 }
 
+export class RedisInvalidCommandError extends RedisError{
+
+    _cmd;
+
+    constructor(cmd){
+        super('Invalid Redis command');
+        this._cmd = cmd;
+    }
+}
+
 export class RedisInvalidDataError extends RedisError{
 
     _data;

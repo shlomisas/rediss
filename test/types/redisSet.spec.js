@@ -54,18 +54,18 @@ describe('Redis Set', () => {
         assert.equal(res, 3, 'should be equal');
     });
 
-    it('Should check if String member exist', async () => {
-        let res = await _instance.exist(_stringValue);
+    it('Should check if String member is exists', async () => {
+        let res = await _instance.exists(_stringValue);
         assert.isTrue(res, 'should be true');
     });
 
-    it('Should check if Object member exist', async () => {
-        let res = await _instance.exist(_objValue);
+    it('Should check if Object member is exists', async () => {
+        let res = await _instance.exists(_objValue);
         assert.isTrue(res, 'should be true');
     });
 
-    it('Should check if Boolean member exist', async () => {
-        let res = await _instance.exist(_booleanValue);
+    it('Should check if Boolean member exists', async () => {
+        let res = await _instance.exists(_booleanValue);
         assert.isTrue(res, 'should be false');
     });
 

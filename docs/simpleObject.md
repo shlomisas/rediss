@@ -11,7 +11,7 @@ let redisObj = new RedisObj('mykey');
 
 await redisObj.set('str1');
 
-let data = await redisObj.get('mykey');
+let data = await redisObj.get();
 
 console.log(data); 
 

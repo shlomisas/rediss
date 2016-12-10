@@ -14,7 +14,7 @@ await redisSet.add('str4');
 
 await redisSet.remove('str2');
 
-let data = await redisSet.getAll('mykey');
+let data = await redisSet.getAll();
 
 console.log(data); 
 
@@ -38,7 +38,7 @@ Wrap [SADD](https://redis.io/commands/sadd)
 Remove a record from a Redis set
 Wrap [SREM](https://redis.io/commands/srem)
 
-> async exist(mixed data):void
+> async exists(mixed data):bool
 
 Check if data is exists in a Redis set
 Wrap [SISMEMBER](https://redis.io/commands/sismember)
@@ -62,3 +62,8 @@ Wrap [SRANDMEMBER](https://redis.io/commands/srandmember)
 
 POP random record form a Redis set
 Wrap [SPOP](https://redis.io/commands/spop)
+
+> async delete():void
+
+Will delete the set from Redis
+Wrap [DEL](https://redis.io/commands/del)

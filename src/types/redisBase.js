@@ -2,7 +2,7 @@
  * Created by Shlomi
  */
 
-import {RedisMissingClientError} from '../errors';
+import {RedisMissingClientError, RedisInvalidCommandError} from '../errors';
 
 export default class RedisBase{
 
@@ -24,5 +24,14 @@ export default class RedisBase{
     async delete(){
         this.beforeAction();
         return this._client.del(this._key);
+    }
+
+    async raw(cmd){
+        this.beforeAction();
+
+        if(typeof this._client[cmd] !== 'function') throw new RedisInvalidCommandError();
+
+        let args = [...arguments].splice(1);
+        return this._client[cmd](args);
     }
 }
