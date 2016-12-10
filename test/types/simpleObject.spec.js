@@ -12,7 +12,7 @@ let assert = chai.assert;
 
 describe('Redis Simple Object', () => {
 
-    let _ttl = 2; // in seconds
+    let _ttl = process.env.TRAVIS ? 5 : 2; // in seconds
     let _instance;
     let _client;
 
