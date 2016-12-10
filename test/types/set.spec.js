@@ -71,14 +71,8 @@ describe('Redis Set', () => {
 
     it('Should get all members in set', async () => {
         let res = await _instance.getAll();
-
         assert.isArray(res, 'should be an array');
         assert.lengthOf(res, 3, 'should be same length');
-
-        // The order of elements is settled by Redis, hope it'll remain like that in the future, if not need to make more dynamic code
-        assert.equal(res[0], _stringValue, 'should be equal');
-        assert.isFalse(res[1], 'should be equal');
-        assert.deepEqual(res[2], _objValue, 'should be equal');
     });
 
     it('Should get random members in set', async () => {
