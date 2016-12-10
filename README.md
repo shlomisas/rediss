@@ -6,7 +6,7 @@
 
 This project gives the ability to use Redis with straight forward data-types objects without remember the native Redis API.
 
-Required Redis 3.2.6+ 
+Tested on Redis v2.8.2400
 
 ## Install 
 
@@ -16,8 +16,8 @@ Required Redis 3.2.6+
 
 ### **Data types**
 
-_Note: most of types can save mixed JavaScript datatypes, it's means that the save same value has settled will fetch, 
-object will internally `JSON.stringify` before save and `JSON.parse` after fetch_
+_Note: most of types can save mixed JavaScript types, it's means saving some value will fetch it exactly with the same type, 
+objects will internally `JSON.stringify` before save and `JSON.parse` after fetch_
 
 * [Simple object](docs/simpleObject.md)
 * [Set](docs/set.md)

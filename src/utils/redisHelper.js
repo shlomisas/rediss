@@ -37,7 +37,7 @@ export default class RedisHelper{
     static decodeRedisData(data){
 
         if(data === null) return data;
-        if(data.trim() === "") return data;
+        if(typeof data === 'string' && data.trim() === "") return data;
 
         if(!isNaN(data)) return Number(data);
         if(data === 'true' || data === 'false') return data === 'true';
@@ -50,5 +50,23 @@ export default class RedisHelper{
 
         return data;
 
+    }
+
+    /**
+     * Decode array elements with RedisHelper.decodeRedisData
+     * @param data Array
+     * @return {Array}
+     */
+    static decodeArrayOfRedisData(data){
+
+        if(!data || !data.length) return;
+
+        let newData = [];
+
+        for(let piece of data){
+            newData.push(RedisHelper.decodeRedisData(piece));
+        }
+
+        return newData;
     }
 }

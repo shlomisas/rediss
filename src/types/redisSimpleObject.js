@@ -30,8 +30,8 @@ export default class RedisSimpleObject extends RedisBase{
         return RedisHelper.decodeRedisData(data);
     }
 
-    async delete(){
+    async getTTL(){
         this.beforeAction();
-        return this._client.del(this._key);
+        return this._client.ttl(this._key);
     }
 }

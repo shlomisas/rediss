@@ -55,30 +55,30 @@ describe('Redis Helper', () => {
     it('Should decode String from redis data', () => {
 
         let data = 'str test';
-        let encodedData = RedisHelper.decodeRedisData(data);
+        let decodedData = RedisHelper.decodeRedisData(data);
 
-        assert.equal(data, encodedData, 'should be equal');
+        assert.equal(data, decodedData, 'should be equal');
     });
 
     it('Should decode Boolean from redis data', () => {
 
         let data1 = 'true';
-        let encodedData1 = RedisHelper.decodeRedisData(data1);
+        let decodedData1 = RedisHelper.decodeRedisData(data1);
 
-        assert.isTrue(encodedData1, 'should be true');
+        assert.isTrue(decodedData1, 'should be true');
 
         let data2 = 'false';
-        let encodedData2 = RedisHelper.decodeRedisData(data2);
+        let decodedData2 = RedisHelper.decodeRedisData(data2);
 
-        assert.isFalse(encodedData2, 'should be true');
+        assert.isFalse(decodedData2, 'should be true');
     });
 
     it('Should decode Object from redis data', () => {
 
         let data = '{"a":5,"b":9, "c": 10, "d": {"z": "what\'s up?"}}';
-        let encodedData = RedisHelper.decodeRedisData(data);
+        let decodedData = RedisHelper.decodeRedisData(data);
 
-        assert.deepEqual(encodedData, {
+        assert.deepEqual(decodedData, {
             'a': 5,
             'b': 9,
             'c': 10,
@@ -91,15 +91,33 @@ describe('Redis Helper', () => {
     it('Should decode Weird situations from redis data', () => {
 
         let data = null;
-        let encodedData = RedisHelper.decodeRedisData(data);
-        assert.equal(encodedData, data, 'should be null');
+        let decodedData = RedisHelper.decodeRedisData(data);
+        assert.equal(decodedData, data, 'should be null');
 
         data = '';
-        encodedData = RedisHelper.decodeRedisData(data);
-        assert.equal(encodedData, data, 'should be empty string');
+        decodedData = RedisHelper.decodeRedisData(data);
+        assert.equal(decodedData, data, 'should be empty string');
 
         data = '   ';
-        encodedData = RedisHelper.decodeRedisData(data);
-        assert.equal(encodedData, data, 'should be empty string');
+        decodedData = RedisHelper.decodeRedisData(data);
+        assert.equal(decodedData, data, 'should be empty string');
+    });
+
+    it('Should decode Array of encoded redis data elements', () => {
+
+        let data = [
+            'sss',
+            '{"a": 5, "b": 6}',
+            'true'
+        ];
+
+        let decodedData = RedisHelper.decodeArrayOfRedisData(data);
+
+        assert.isArray(decodedData, 'should be an array');
+        assert.lengthOf(decodedData, 3, 'should be same length');
+
+        assert.equal(decodedData[0], 'sss', 'should be equal');
+        assert.deepEqual(decodedData[1], {a: 5, b: 6}, 'should be equal');
+        assert.isTrue(decodedData[2], 'should be true');
     });
 });

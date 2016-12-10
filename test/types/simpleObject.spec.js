@@ -4,39 +4,44 @@
 
 import chai from 'chai';
 
-import RedisClient from '../src/utils/redisClient';
-import RedisSimpleObject from '../src/utils/redisSimpleObject';
+import config from '../config';
+import RedisClient from '../../src/utils/redisClient';
+import RedisSimpleObject from '../../src/types/redisSimpleObject';
 
 let assert = chai.assert;
 
 describe('Redis Simple Object', () => {
 
-    let ttl = 2; // in seconds
+    let _ttl = 2; // in seconds
     let _instance;
+    let _client;
 
-    before(() => {
+    before(async () => {
+        _client = new RedisClient(config.redis);
+        _instance = new RedisSimpleObject('test_rso_key', {client: _client});
 
-        let client = new RedisClient({
-            port: 6379,
-            host: '127.0.0.1',
-            db: 0
-        });
-
-        _instance = new RedisSimpleObject('test_rso_key', {client});
+        // Clean current data from Redis
+        return _instance.delete();
     });
 
-    it('Should set the data to Redis', async () => {
+    after(function() {
+        if(_client){
+            _client.quit();
+        }
+    });
+
+    it('Should set data', async () => {
 
         let res = await _instance.set({
             a: 5,
             b: 6
-        }, ttl);
+        }, _ttl);
 
         assert.equal(res, 'OK', 'should be equal');
 
     });
 
-    it('Should get the data from Redis', async () => {
+    it('Should get data', async () => {
 
         let res = await _instance.get();
 
@@ -47,10 +52,19 @@ describe('Redis Simple Object', () => {
 
     });
 
-    it('Should not get the data from Redis due to expiration', async () => {
+    it(`Should get data's TTL`, async () => {
+
+        let res = await _instance.getTTL();
+
+        assert.isAbove(res, 0, 'should be above');
+        assert.isAtMost(res, _ttl, 'should be below');
+
+    });
+
+    it('Should not get an expired data', async () => {
 
         await new Promise((resolve, reject) => {
-            setTimeout(resolve, ttl*1000);
+            setTimeout(resolve, _ttl*1000);
         });
 
         let res = await _instance.get();
@@ -59,7 +73,7 @@ describe('Redis Simple Object', () => {
 
     });
 
-    it('Should delete the data from Redis', async () => {
+    it('Should delete data', async () => {
 
         let data = true;
 

@@ -20,4 +20,9 @@ export default class RedisBase{
     beforeAction(){
         if(!this._client) throw new RedisMissingClientError();
     }
+
+    async delete(){
+        this.beforeAction();
+        return this._client.del(this._key);
+    }
 }
