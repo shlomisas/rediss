@@ -3,8 +3,6 @@
  * Created by Shlomi.
  */
 
-require('babel-register');
-
 import chai from 'chai';
 
 let assert = chai.assert;

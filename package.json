@@ -45,6 +45,7 @@
     "yargs": "^6.5.0"
   },
   "dependencies": {
-    "ioredis": "^2.4.2"
+    "ioredis": "^2.4.2",
+    "verror": "^1.9.0"
   }
 }

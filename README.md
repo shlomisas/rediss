@@ -16,6 +16,9 @@ Required Redis 3.2.6+
 
 ### **Data types**
 
+_Note: most of types can save mixed JavaScript datatypes, it's means that the save same value has settled will fetch, 
+object will internally `JSON.stringify` before save and `JSON.parse` after fetch_
+
 * [Simple object](docs/simpleObject.md)
 * [Set](docs/set.md)
 
