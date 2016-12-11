@@ -8,7 +8,7 @@ Use Redis' commands straight-forward, with no need to remember the complicated R
 
 ## Contribute
 
-Since wrap all Redis commands can take long time, so feel free to contribute ;)
+Since wrap all Redis commands can take long time, you're welcome to contribute ;)
 
 ## Support
 
