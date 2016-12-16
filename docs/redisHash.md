@@ -39,30 +39,36 @@ and we don't need to mention the key again and again
 > async delete():void
 
 Will delete the set from Redis
+
 Wrap [DEL](https://redis.io/commands/del)
 
 > async set(string fieldName, mixed data):void
 > async set(object {field1: data1, field2: data2}):void (overload)
     
 Set a value into one hash field name of multiple fields with multiple data
+
 Wrap [HSET](https://redis.io/commands/hset) and [HMSET](https://redis.io/commands/hmset)
 
 > async get(string fieldName):mixed
 
 Will return an individual hash field value
+
 Wrap [HGET](https://redis.io/commands/hget)
 
 > async exists(string fieldName):bool
 
 Check if field is exist in hash
+
 Wrap [HEXISTS](https://redis.io/commands/hexists)
 
 > async remove(string fieldName):void
 
 Will remove an hash field from Redis
+
 Wrap [HDEL](https://redis.io/commands/hdel)
 
 > async getAll():mixed
 
 Will return hash field value
+
 Wrap [HGETALL](https://redis.io/commands/hgetall)
