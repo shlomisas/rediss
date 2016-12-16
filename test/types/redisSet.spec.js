@@ -36,22 +36,22 @@ describe('Redis Set', () => {
 
     it('Should add a String member', async () => {
         let res = await _instance.add(_stringValue);
-        assert.equal(res, 1, 'should be equal');
+        assert.deepEqual(res, true, 'should be equal');
     });
 
     it('Should add an Object member', async () => {
         let res = await _instance.add(_objValue);
-        assert.equal(res, 1, 'should be equal');
+        assert.deepEqual(res, true, 'should be equal');
     });
 
     it('Should add an Boolean member', async () => {
         let res = await _instance.add(_booleanValue);
-        assert.equal(res, 1, 'should be equal');
+        assert.deepEqual(res, true, 'should be equal');
     });
 
     it('Should get the size of set', async () => {
         let res = await _instance.size();
-        assert.equal(res, 3, 'should be equal');
+        assert.deepEqual(res, 3, 'should be equal');
     });
 
     it('Should check if String member is exists', async () => {
@@ -84,12 +84,12 @@ describe('Redis Set', () => {
 
     it('Should remove member from set', async () => {
         let res = await _instance.remove(_booleanValue);
-        assert.equal(res, 1, 'should be equal');
+        assert.deepEqual(res, true, 'should be equal');
     });
 
     it('Should get the size of set (again..)', async () => {
         let res = await _instance.size();
-        assert.equal(res, 2, 'should be equal');
+        assert.deepEqual(res, 2, 'should be equal');
     });
 
     it('Should pop random members in set', async () => {
@@ -100,12 +100,12 @@ describe('Redis Set', () => {
 
     it('Should get the size of set (and again..)', async () => {
         let res = await _instance.size();
-        assert.equal(res, 1, 'should be equal');
+        assert.deepEqual(res, 1, 'should be equal');
     });
 
     it('Should delete the set', async () => {
         let res = await _instance.delete();
-        assert.equal(res, 1, 'should be equal');
+        assert.deepEqual(res, 1, 'should be equal');
     });
 
 });

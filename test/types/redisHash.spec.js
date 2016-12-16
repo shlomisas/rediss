@@ -40,12 +40,12 @@ describe('Redis Hash', () => {
         let fieldName = Object.keys(_sampleObj)[0];
 
         let res = await _instance.set(fieldName, _sampleObj[fieldName]);
-        assert.equal(res, 1, 'should be equal');
+        assert.deepEqual(res, true, 'should be equal');
     });
 
     it('Should all object fields', async () => {
         let res = await _instance.set(_sampleObj);
-        assert.equal(res, 'OK', 'should be equal');
+        assert.deepEqual(res, true, 'should be equal');
     });
 
     it('Should get object field', async () => {
@@ -53,7 +53,7 @@ describe('Redis Hash', () => {
         let fieldName = Object.keys(_sampleObj)[2];
 
         let res = await _instance.get(fieldName);
-        assert.equal(res, _sampleObj[fieldName], 'should be equal');
+        assert.deepEqual(res, _sampleObj[fieldName], 'should be equal');
     });
 
     it('Should get true cause object field exist', async () => {
@@ -74,7 +74,7 @@ describe('Redis Hash', () => {
         let fieldName = Object.keys(_sampleObj)[1];
 
         let res = await _instance.remove(fieldName);
-        assert.equal(res, 1, 'should be equal');
+        assert.deepEqual(res, true, 'should be equal');
     });
 
     it('Should get false cause object field has removed', async () => {
@@ -91,13 +91,13 @@ describe('Redis Hash', () => {
         let fieldName0 = Object.keys(_sampleObj)[0];
         let fieldName2 = Object.keys(_sampleObj)[2];
 
-        assert.equal(res[fieldName0], _sampleObj[fieldName0], 'should be equal');
-        assert.equal(res[fieldName2], _sampleObj[fieldName2], 'should be equal');
+        assert.deepEqual(res[fieldName0], _sampleObj[fieldName0], 'should be equal');
+        assert.deepEqual(res[fieldName2], _sampleObj[fieldName2], 'should be equal');
     });
 
     it('Should delete the object', async () => {
         let res = await _instance.delete();
 
-        assert.equal(res, 1, 'should be equal');
+        assert.deepEqual(res, 1, 'should be equal');
     });
 });

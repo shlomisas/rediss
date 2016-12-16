@@ -2,6 +2,8 @@
 
 Wrap [Redis Set](https://redis.io/commands#set)
 
+---
+
 **Example**
 
 ```javascript
@@ -21,12 +23,19 @@ console.log(data);
 // Will print ['str1', 'str3', 'str4']
 ```
 
+---
+
 **Docs**
 
 > constructor(key)
 
 The constructor assign the key for all future operations of this instance 
 and we don't need to mention the key again and again
+
+> async delete():void
+
+Will delete the set from Redis
+Wrap [DEL](https://redis.io/commands/del)
 
 > async add(mixed data):void
 
@@ -62,8 +71,3 @@ Wrap [SRANDMEMBER](https://redis.io/commands/srandmember)
 
 POP random record form a Redis set
 Wrap [SPOP](https://redis.io/commands/spop)
-
-> async delete():void
-
-Will delete the set from Redis
-Wrap [DEL](https://redis.io/commands/del)

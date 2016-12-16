@@ -37,7 +37,7 @@ describe('Redis Simple Object', () => {
             b: 6
         }, _ttl);
 
-        assert.equal(res, 'OK', 'should be equal');
+        assert.deepEqual(res, true, 'should be equal');
 
     });
 
@@ -78,13 +78,13 @@ describe('Redis Simple Object', () => {
         let data = true;
 
         let res = await _instance.set(data);
-        assert.equal(res, 'OK', 'should be equal');
+        assert.deepEqual(res, true, 'should be equal');
 
         res = await _instance.get();
         assert.isTrue(res, data, 'should be equal');
 
         res = await _instance.delete();
-        assert.equal(res, 1, 'should be equal');
+        assert.deepEqual(res, 1, 'should be equal');
 
         res = await _instance.get();
         assert.isNull(res, 'should be null');

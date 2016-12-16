@@ -4,6 +4,8 @@ Wrap [Redis Hash](https://redis.io/commands#hash)
 
 _Implements most used Redis commands, rest commands will implement during time or upon request_
 
+---
+
 **Example**
 
 ```javascript
@@ -25,12 +27,19 @@ console.log(data);
 // Will print {field1: 'str1', field2: {a: 5, b: 6}}
 ```
 
+---
+
 **Docs**
 
 > constructor(key)
 
 The constructor assign the key for all future operations of this instance 
 and we don't need to mention the key again and again
+
+> async delete():void
+
+Will delete the set from Redis
+Wrap [DEL](https://redis.io/commands/del)
 
 > async set(string fieldName, mixed data):void
 > async set(object {field1: data1, field2: data2}):void (overload)
@@ -57,8 +66,3 @@ Wrap [HDEL](https://redis.io/commands/hdel)
 
 Will return hash field value
 Wrap [HGETALL](https://redis.io/commands/hgetall)
-
-> async delete():void
-
-Will delete the set from Redis
-Wrap [DEL](https://redis.io/commands/del)

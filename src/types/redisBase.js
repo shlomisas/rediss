@@ -26,7 +26,7 @@ export default class RedisBase{
         return this._client.del(this._key);
     }
 
-    async raw(cmd){
+    async _raw(cmd){
         this.beforeAction();
 
         if(typeof this._client[cmd] !== 'function') throw new RedisInvalidCommandError();

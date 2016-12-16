@@ -22,31 +22,30 @@ export default class RedisHash extends RedisBase{
                 args.push(fields[tmpFieldName]);
             }
 
-            return this.raw('hmset', this._key, ...args);
+            return (await this._raw('hmset', this._key, ...args)) === 'OK';
 
         }else{
-            return this.raw('hset', this._key, fieldName, RedisHelper.encodeRedisData(data));
+            return !!await this._raw('hset', this._key, fieldName, RedisHelper.encodeRedisData(data));
         }
     }
 
     async get(fieldName){
         this.beforeAction();
-        return this.raw('hget', this._key, fieldName);
+        return this._raw('hget', this._key, fieldName);
     }
 
     async exists(fieldName){
         this.beforeAction();
-        return !!await this.raw('hexists', this._key, fieldName);
+        return !!await this._raw('hexists', this._key, fieldName);
     }
 
     async remove(fieldName){
         this.beforeAction();
-        return this.raw('hdel', this._key, fieldName);
+        return !!await this._raw('hdel', this._key, fieldName);
     }
 
     async getAll(){
         this.beforeAction();
-
-        return this.raw('hgetall', this._key);
+        return this._raw('hgetall', this._key);
     }
 }

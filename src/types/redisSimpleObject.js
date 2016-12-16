@@ -21,17 +21,16 @@ export default class RedisSimpleObject extends RedisBase{
             args.push(ttl);
         }
 
-        return this.raw('set', ...args);
+        return (await this._raw('set', ...args)) === 'OK';
     }
 
     async get(){
         this.beforeAction();
-        let data = await this.raw('get', this._key);
-        return RedisHelper.decodeRedisData(data);
+        return RedisHelper.decodeRedisData(await this._raw('get', this._key));
     }
 
     async getTTL(){
         this.beforeAction();
-        return this.raw('ttl', this._key);
+        return this._raw('ttl', this._key);
     }
 }
