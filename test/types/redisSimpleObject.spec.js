@@ -54,7 +54,7 @@ describe('Redis Simple Object', () => {
 
     it(`Should get data's TTL`, async () => {
 
-        let res = await _instance.getTTL();
+        let res = await _instance.ttl();
 
         assert.isAbove(res, 0, 'should be above');
         assert.isAtMost(res, _ttl, 'should be below');
@@ -84,7 +84,7 @@ describe('Redis Simple Object', () => {
         assert.isTrue(res, data, 'should be equal');
 
         res = await _instance.delete();
-        assert.deepEqual(res, 1, 'should be equal');
+        assert.deepEqual(res, true, 'should be equal');
 
         res = await _instance.get();
         assert.isNull(res, 'should be null');

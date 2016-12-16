@@ -105,7 +105,7 @@ describe('Redis Set', () => {
 
     it('Should delete the set', async () => {
         let res = await _instance.delete();
-        assert.deepEqual(res, 1, 'should be equal');
+        assert.deepEqual(res, true, 'should be equal');
     });
 
 });

@@ -17,21 +17,32 @@ export default class RedisBase{
     /**
      * @throws RedisMissingClientError
      */
-    beforeAction(){
+    _beforeAction(){
         if(!this._client) throw new RedisMissingClientError();
     }
 
-    async delete(){
-        this.beforeAction();
-        return this._client.del(this._key);
-    }
-
     async _raw(cmd){
-        this.beforeAction();
+        this._beforeAction();
 
         if(typeof this._client[cmd] !== 'function') throw new RedisInvalidCommandError();
 
         let args = [...arguments].splice(1);
         return this._client[cmd](args);
+    }
+
+    // Redis actions
+    async expire(ttl){
+        this._beforeAction();
+        return !!await this._raw('expire', this._key, ttl);
+    }
+
+    async ttl(){
+        this._beforeAction();
+        return this._raw('ttl', this._key);
+    }
+
+    async delete(){
+        this._beforeAction();
+        return !!await this._raw('del', this._key);
     }
 }

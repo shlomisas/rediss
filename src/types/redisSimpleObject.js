@@ -8,7 +8,7 @@ import RedisBase from './redisBase';
 
 export default class RedisSimpleObject extends RedisBase{
     async set(data, ttl){
-        this.beforeAction();
+        this._beforeAction();
         data = RedisHelper.encodeRedisData(data);
 
         let args = [
@@ -25,12 +25,7 @@ export default class RedisSimpleObject extends RedisBase{
     }
 
     async get(){
-        this.beforeAction();
+        this._beforeAction();
         return RedisHelper.decodeRedisData(await this._raw('get', this._key));
-    }
-
-    async getTTL(){
-        this.beforeAction();
-        return this._raw('ttl', this._key);
     }
 }

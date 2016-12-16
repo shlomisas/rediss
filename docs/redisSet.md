@@ -27,54 +27,45 @@ console.log(data);
 
 **Docs**
 
-> constructor(key)
+_Inherit more methods from [Redis Base](redisBase.doc)_
 
-The constructor assign the key for all future operations of this instance 
-and we don't need to mention the key again and again
-
-> async delete():void
-
-Will delete the set from Redis
-
-<sub>Wrap [DEL](https://redis.io/commands/del)</sub>
-
-> async add(mixed data):void
+> async add(mixed data):boolean
 
 Add a record into a Redis set
 
 <sub>Wrap [SADD](https://redis.io/commands/sadd)</sub>
 
-> async remove(mixed data):void
+> async remove(mixed data):boolean
 
 Remove a record from a Redis set
 
 <sub>Wrap [SREM](https://redis.io/commands/srem)</sub>
 
-> async exists(mixed data):bool
+> async exists(mixed data):boolean
 
 Check if data is exists in a Redis set
 
 <sub>Wrap [SISMEMBER](https://redis.io/commands/sismember)</sub>
 
-> async size():void
+> async size():int
 
 Get a Redis set size (length)
 
 <sub>Wrap [SCARD](https://redis.io/commands/scard)</sub>
 
-> async getAll():void
+> async getAll():array
 
 Get all records from a Redis set
 
 <sub>Wrap [SMEMBERS](https://redis.io/commands/smembers)</sub>
 
-> async getRands(count):void
+> async getRands(count):array
 
 Get random `count` records form a Redis set
 
 <sub>Wrap [SRANDMEMBER](https://redis.io/commands/srandmember)</sub>
 
-> async popRand(count):void
+> async popRand(count):mixed
 
 POP random record form a Redis set
 

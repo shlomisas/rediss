@@ -24,18 +24,9 @@ console.log(data);
 
 **Docs**
 
-> constructor(key)
+_Inherit more methods from [Redis Base](redisBase.doc)_
 
-The constructor assign the key for all future operations of this instance 
-and we don't need to mention the key again and again
-
-> async delete():void
-
-Will delete the object from Redis
-
-<sub>Wrap [DEL](https://redis.io/commands/del)</sub>
-
-> async set(mixed data):void
+> async set(mixed data):boolean
     
 Set a value into redis object, input data can be any type
 

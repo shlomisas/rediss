@@ -31,19 +31,10 @@ console.log(data);
 
 **Docs**
 
-> constructor(key)
+_Inherit more methods from [Redis Base](redisBase.doc)_
 
-The constructor assign the key for all future operations of this instance 
-and we don't need to mention the key again and again
-
-> async delete():void
-
-Will delete the set from Redis
-
-<sub>Wrap [DEL](https://redis.io/commands/del)</sub>
-
-> async set(string fieldName, mixed data):void
-> async set(object {field1: data1, field2: data2}):void (overload)
+> async set(string fieldName, mixed data):boolean
+> async set(object {field1: data1, field2: data2}):boolean (overload)
     
 Set a value into one hash field name of multiple fields with multiple data
 
@@ -55,13 +46,13 @@ Will return an individual hash field value
 
 <sub>Wrap [HGET](https://redis.io/commands/hget)</sub>
 
-> async exists(string fieldName):bool
+> async exists(string fieldName):boolean
 
 Check if field is exist in hash
 
 <sub>Wrap [HEXISTS](https://redis.io/commands/hexists)</sub>
 
-> async remove(string fieldName):void
+> async remove(string fieldName):boolean
 
 Will remove an hash field from Redis
 

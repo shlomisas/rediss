@@ -8,7 +8,7 @@ import RedisBase from './redisBase';
 
 export default class RedisHash extends RedisBase{
     async set(fieldName, data){
-        this.beforeAction();
+        this._beforeAction();
 
         if(typeof fieldName === 'object'){
 
@@ -30,22 +30,22 @@ export default class RedisHash extends RedisBase{
     }
 
     async get(fieldName){
-        this.beforeAction();
+        this._beforeAction();
         return this._raw('hget', this._key, fieldName);
     }
 
     async exists(fieldName){
-        this.beforeAction();
+        this._beforeAction();
         return !!await this._raw('hexists', this._key, fieldName);
     }
 
     async remove(fieldName){
-        this.beforeAction();
+        this._beforeAction();
         return !!await this._raw('hdel', this._key, fieldName);
     }
 
     async getAll(){
-        this.beforeAction();
+        this._beforeAction();
         return this._raw('hgetall', this._key);
     }
 }
