@@ -58,41 +58,41 @@ Will delete the list from Redis
     
 Insert an element into the end of the list
 
-_Wrap [RPUSH](https://redis.io/commands/rpush)
+_Wrap [RPUSH](https://redis.io/commands/rpush)_
 
 > async unshift(mixed data):void
     
 Insert an element into the beginning of the list
 
-_Wrap [LPUSH](https://redis.io/commands/lpush)
+_Wrap [LPUSH](https://redis.io/commands/lpush)_
 
 > async pop(object options):void
 
 Pop the last element of the list
 
-_Wrap [RPOP](https://redis.io/commands/rpop)
+_Wrap [RPOP](https://redis.io/commands/rpop)_
 
 > async shift():void
 
 Pop the first element of the list
 
-_Wrap [LPOP](https://redis.io/commands/lpop)
+_Wrap [LPOP](https://redis.io/commands/lpop)_
 
 > async getAt(int index):void
     
 Returns the element at `index` in the list
 
-_Wrap [LINDEX](https://redis.io/commands/lindex)
+_Wrap [LINDEX](https://redis.io/commands/lindex)_
 
 > async getAll(int start = 0, int length = -1):void
     
 Returns `length` number of elements from the `start` point of the list, 
 calling the function with the default arguments will return all elements in the list
 
-_Wrap [LRANGE](https://redis.io/commands/lrange)
+_Wrap [LRANGE](https://redis.io/commands/lrange)_
 
 > async length():void
     
 Get the length of the list
 
-_Wrap [LLEN](https://redis.io/commands/llen)
+_Wrap [LLEN](https://redis.io/commands/llen)_
