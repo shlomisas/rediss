@@ -29,7 +29,7 @@ Set expiration `ttl` seconds to the key
 
 Remove the ttl of a key to be persist on Redis
 
-<sub>[PERSIST](https://redis.io/commands/persist)</sub>
+<sub>Wrap [PERSIST](https://redis.io/commands/persist)</sub>
 
 > async ttl():void
 
