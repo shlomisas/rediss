@@ -56,9 +56,9 @@ Will delete the list from Redis
 
 > async push(mixed data):void
     
-Insert an element into the end of the list
-
 <sub>_Wrap [RPUSH](https://redis.io/commands/rpush)_</sup>
+
+Insert an element into the end of the list
 
 > async unshift(mixed data):void
     
