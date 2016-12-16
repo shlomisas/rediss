@@ -36,46 +36,46 @@ and we don't need to mention the key again and again
 
 Will delete the set from Redis
 
-Wrap [DEL](https://redis.io/commands/del)
+<sub>Wrap [DEL](https://redis.io/commands/del)</sub>
 
 > async add(mixed data):void
 
 Add a record into a Redis set
 
-Wrap [SADD](https://redis.io/commands/sadd)
+<sub>Wrap [SADD](https://redis.io/commands/sadd)</sub>
 
 > async remove(mixed data):void
 
 Remove a record from a Redis set
 
-Wrap [SREM](https://redis.io/commands/srem)
+<sub>Wrap [SREM](https://redis.io/commands/srem)</sub>
 
 > async exists(mixed data):bool
 
 Check if data is exists in a Redis set
 
-Wrap [SISMEMBER](https://redis.io/commands/sismember)
+<sub>Wrap [SISMEMBER](https://redis.io/commands/sismember)</sub>
 
 > async size():void
 
 Get a Redis set size (length)
 
-Wrap [SCARD](https://redis.io/commands/scard)
+<sub>Wrap [SCARD](https://redis.io/commands/scard)</sub>
 
 > async getAll():void
 
 Get all records from a Redis set
 
-Wrap [SMEMBERS](https://redis.io/commands/smembers)
+<sub>Wrap [SMEMBERS](https://redis.io/commands/smembers)</sub>
 
 > async getRands(count):void
 
 Get random `count` records form a Redis set
 
-Wrap [SRANDMEMBER](https://redis.io/commands/srandmember)
+<sub>Wrap [SRANDMEMBER](https://redis.io/commands/srandmember)</sub>
 
 > async popRand(count):void
 
 POP random record form a Redis set
 
-Wrap [SPOP](https://redis.io/commands/spop)
+<sub>Wrap [SPOP](https://redis.io/commands/spop)</sub>
