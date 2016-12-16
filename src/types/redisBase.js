@@ -32,8 +32,14 @@ export default class RedisBase{
 
     // Redis actions
     async expire(ttl){
+        if(ttl <=0 ) throw new Error('Invalid TTL value');
         this._beforeAction();
         return !!await this._raw('expire', this._key, ttl);
+    }
+
+    async persist(){
+        this._beforeAction();
+        return !!await this._raw('persist', this._key);
     }
 
     async ttl(){

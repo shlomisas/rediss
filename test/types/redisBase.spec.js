@@ -46,6 +46,14 @@ describe('Redis Base', () => {
         assert.approximately(_origTTL, res, 0, 'should be in between');
     });
 
+    it('Should set an invalid the key TTL', async () => {
+        try{
+            _instance.expire(-1);
+        }catch(e){
+            assert.deepEqual(e.message, `Invalid TTL value`);
+        }
+    });
+
     it('Should change the key TTL', async () => {
         let res = await _instance.expire(_newTTL);
         assert.deepEqual(res, true, 'should be equal');
@@ -57,6 +65,14 @@ describe('Redis Base', () => {
         }else{
             assert.approximately(_newTTL, res, _origTTL, 'should be in between');
         }
+    });
+
+    it('Should remove the key TTL', async () => {
+        let res = await _instance.persist();
+        assert.deepEqual(res, true, 'should be equal');
+
+        res = await _instance.ttl();
+        assert.deepEqual(res, -1, 'should be equal');
     });
 
     it('Should delete the key', async () => {

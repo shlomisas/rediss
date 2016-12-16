@@ -21,9 +21,15 @@ and we don't need to mention the key again and again
 
 > async expire(ttl:number):boolean
 
-Set expiration `ttl` seconds to the key, if `ttl` is equal to `-1` it'll remove the expiration from the key
+Set expiration `ttl` seconds to the key
 
-<sub>Wrap [EXPIRE](https://redis.io/commands/expire) and [PERSIST](https://redis.io/commands/persist)</sub>
+<sub>Wrap [EXPIRE](https://redis.io/commands/expire)</sub>
+
+> async persist():boolean
+
+Remove the ttl of a key to be persist on Redis
+
+<sub>[PERSIST](https://redis.io/commands/persist)</sub>
 
 > async ttl():void
 
