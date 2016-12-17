@@ -25,11 +25,11 @@ Tested on Redis 2.8.2400
 _Note: objects can save mixed JavaScript data, it's means that when saving a value will fetch exactly as saved - with the same type, 
 objects will internally `JSON.stringify` before save and `JSON.parse` after fetch_
 
-* [Redis Base](docs/redisBase.md)
-* [Redis Simple object](docs/redisSimpleObject.md)
-* [Redis Set](docs/redisSet.md)
-* [Redis Hash](docs/redisHash.md)
-* [Redis List](docs/redisList.md)
+* [Redis Base](docs/redisBase.md) (abstract)
+* [Redis Simple object](docs/redisSimpleObject.md) inherit Redis Base
+* [Redis Set](docs/redisSet.md) inherit Redis Base
+* [Redis Hash](docs/redisHash.md) inherit Redis Base
+* [Redis List](docs/redisList.md) inherit Redis Base
 * [Redis PUBSUB](docs/redisPubsub.md)
 
 ### **Errors**
