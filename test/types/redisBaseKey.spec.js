@@ -10,7 +10,7 @@ import RedisSimpleObject from '../../src/types/redisSimpleObject';
 
 let assert = chai.assert;
 
-describe('Redis Base', () => {
+describe('Redis Base Key', () => {
 
     let _sampleData = [
         'str1',

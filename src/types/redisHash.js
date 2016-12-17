@@ -4,9 +4,9 @@
 
 import RedisHelper from '../utils/redisHelper';
 
-import RedisBase from './redisBase';
+import RedisBaseKey from './redisBaseKey';
 
-export default class RedisHash extends RedisBase{
+export default class RedisHash extends RedisBaseKey{
     async set(fieldName, data){
         this._beforeAction();
 

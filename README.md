@@ -30,7 +30,7 @@ objects will internally `JSON.stringify` before save and `JSON.parse` after fetc
 * [Redis Set](docs/redisSet.md)
 * [Redis Hash](docs/redisHash.md)
 * [Redis List](docs/redisList.md)
-* Redis PUBSUB - TBD
+* [Redis PUBSUB](docs/redisPubsub.md)
 
 ### **Errors**
 

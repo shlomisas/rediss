@@ -4,9 +4,9 @@
 
 import RedisHelper from '../utils/redisHelper';
 
-import RedisBase from './redisBase';
+import RedisBaseKey from './redisBaseKey';
 
-export default class RedisList extends RedisBase{
+export default class RedisList extends RedisBaseKey{
     async push(data){
         return !! await this._raw('rpush', this._key, RedisHelper.encodeRedisData(data));
     }

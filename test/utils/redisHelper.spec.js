@@ -120,4 +120,13 @@ describe('Redis Helper', () => {
         assert.deepEqual(decodedData[1], {a: 5, b: 6}, 'should be equal');
         assert.isTrue(decodedData[2], 'should be true');
     });
+
+    it('Should check glob-strings', () => {
+        assert.isTrue(RedisHelper.isGlobString('h?llo'), 'should be true');
+        assert.isTrue(RedisHelper.isGlobString('h*llo'), 'should be true');
+        assert.isTrue(RedisHelper.isGlobString('h[ae]llo'), 'should be true');
+        assert.isFalse(RedisHelper.isGlobString('hello'), 'should be false');
+        assert.isFalse(RedisHelper.isGlobString('hell[o'), 'should be false');
+        assert.isFalse(RedisHelper.isGlobString('hell]o'), 'should be false');
+    });
 });

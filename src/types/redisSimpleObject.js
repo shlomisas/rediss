@@ -4,9 +4,9 @@
 
 import RedisHelper from '../utils/redisHelper';
 
-import RedisBase from './redisBase';
+import RedisBaseKey from './redisBaseKey';
 
-export default class RedisSimpleObject extends RedisBase{
+export default class RedisSimpleObject extends RedisBaseKey{
     async set(data, ttl){
         this._beforeAction();
         data = RedisHelper.encodeRedisData(data);

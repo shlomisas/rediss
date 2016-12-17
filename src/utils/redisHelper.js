@@ -69,4 +69,10 @@ export default class RedisHelper{
 
         return newData;
     }
+
+    static isGlobString(str){
+        return str && (str.includes('*') ||
+            str.includes('?') ||
+            (str.includes('[') && str.includes(']')))
+    }
 }

@@ -14,10 +14,14 @@ An abstract class that all other types inherit from.
 
 **Docs**
 
-> constructor(key)
+> constructor(key:string, options:object)
 
 The constructor assign the key for all future operations of this instance 
 and we don't need to mention the key again and again
+
+Options includes:
+    
+- `client`, an instance of some Redis client that exposed all Redis commands as methods names, e.g. [IORedis](https://www.npmjs.com/package/ioredis)
 
 > async expire(ttl:number):boolean
 

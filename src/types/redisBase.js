@@ -7,11 +7,9 @@ import {RedisMissingClientError, RedisInvalidCommandError} from '../errors';
 export default class RedisBase{
 
     _client;
-    _key;
 
-    constructor(key, options = {}){
-        this._key = key;
-        this._client = options.client;
+    constructor(client){
+        this._client = client;
     }
 
     /**
@@ -28,27 +26,5 @@ export default class RedisBase{
 
         let args = [...arguments].splice(1);
         return this._client[cmd](args);
-    }
-
-    // Redis actions
-    async expire(ttl){
-        if(ttl <=0 ) throw new Error('Invalid TTL value');
-        this._beforeAction();
-        return !!await this._raw('expire', this._key, ttl);
-    }
-
-    async persist(){
-        this._beforeAction();
-        return !!await this._raw('persist', this._key);
-    }
-
-    async ttl(){
-        this._beforeAction();
-        return this._raw('ttl', this._key);
-    }
-
-    async delete(){
-        this._beforeAction();
-        return !!await this._raw('del', this._key);
     }
 }

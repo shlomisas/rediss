@@ -4,9 +4,9 @@
 
 import RedisHelper from '../utils/redisHelper';
 
-import RedisBase from './redisBase';
+import RedisBaseKey from './redisBaseKey';
 
-export default class RedisSet extends RedisBase{
+export default class RedisSet extends RedisBaseKey{
 
     async add(data){
         this._beforeAction();
