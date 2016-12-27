@@ -1,54 +1,54 @@
 {
-    "name": "rediss",
-    "version": "1.0.8",
-    "description": "Simple Redis toolkit",
-    "main": "dist/index.js",
-    "scripts": {
-        "test": "mocha --compilers js:babel-core/register --timeout 15000 test/**/*.spec.js",
-        "preversion": "gulp build",
-        "postversion": "git push"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/shlomisas/rediss.git"
-    },
-    "keywords": [
-        "Redis",
-        "Simple",
-        "OOP"
-    ],
-    "author": "Shlomi Sasson",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/shlomisas/rediss/issues"
-    },
-    "homepage": "https://github.com/shlomisas/rediss#readme",
-    "devDependencies": {
-        "babel-core": "^6.18.2",
-        "babel-plugin-add-module-exports": "^0.2.1",
-        "babel-plugin-transform-class-properties": "^6.19.0",
-        "babel-preset-node6": "^11.0.0",
-        "babel-preset-stage-0": "^6.16.0",
-        "babel-register": "^6.18.0",
-        "chai": "^3.5.0",
-        "del": "^2.2.2",
-        "gulp": "^3.9.1",
-        "gulp-babel": "^6.1.2",
-        "gulp-bump": "^2.5.1",
-        "gulp-extend": "^0.2.0",
-        "gulp-git": "^1.12.0",
-        "gulp-load-plugins": "^1.4.0",
-        "gulp-plumber": "^1.1.0",
-        "gulp-sourcemaps": "^1.9.1",
-        "gulp-util": "^3.0.7",
-        "gulp-watch": "^4.3.11",
-        "mkdirp": "^0.5.1",
-        "mocha": "^3.2.0",
-        "run-sequence": "^1.2.2",
-        "yargs": "^6.5.0"
-    },
-    "dependencies": {
-        "ioredis": "^2.4.2",
-        "verror": "^1.9.0"
-    }
+  "name": "rediss",
+  "version": "1.0.9",
+  "description": "Simple Redis toolkit",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-core/register --timeout 15000 test/**/*.spec.js",
+    "preversion": "gulp build",
+    "postversion": "git push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shlomisas/rediss.git"
+  },
+  "keywords": [
+    "Redis",
+    "Simple",
+    "OOP"
+  ],
+  "author": "Shlomi Sasson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shlomisas/rediss/issues"
+  },
+  "homepage": "https://github.com/shlomisas/rediss#readme",
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-class-properties": "^6.19.0",
+    "babel-preset-node6": "^11.0.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "chai": "^3.5.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-bump": "^2.5.1",
+    "gulp-extend": "^0.2.0",
+    "gulp-git": "^1.12.0",
+    "gulp-load-plugins": "^1.4.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.11",
+    "mkdirp": "^0.5.1",
+    "mocha": "^3.2.0",
+    "run-sequence": "^1.2.2",
+    "yargs": "^6.5.0"
+  },
+  "dependencies": {
+    "ioredis": "^2.4.2",
+    "verror": "^1.9.0"
+  }
 }
