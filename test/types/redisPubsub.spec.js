@@ -54,9 +54,13 @@ describe('Redis PUBSUB', () => {
                 await _instance.subscribe(_channels[0]);
 
                 _instance.onMessage((channel, data) => {
-                    assert.deepEqual(channel, _channels[0], 'should be equal');
-                    assert.deepEqual(data, _sampleData[0], 'should be equal');
-                    done();
+                    try{
+                        assert.deepEqual(channel, _channels[0], 'should be equal');
+                        assert.deepEqual(data, _sampleData[0], 'should be equal');
+                        done();
+                    }catch(e){
+                        done(e);
+                    }
                 });
 
                 await _instance.publish(_channels[0], _sampleData[0]);
