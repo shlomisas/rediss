@@ -24,7 +24,7 @@ console.log(data);
 
 **Docs**
 
-_Inherit more methods from [Redis Base](redisBase.doc)_
+_Inherit more methods from [Redis Base](redisBase.md)_
 
 > async set(mixed data):boolean
     

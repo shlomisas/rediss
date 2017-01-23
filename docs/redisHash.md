@@ -31,7 +31,7 @@ console.log(data);
 
 **Docs**
 
-_Inherit more methods from [Redis Base](redisBase.doc)_
+_Inherit more methods from [Redis Base](redisBase.md)_
 
 > async set(string fieldName, mixed data):boolean
 > async set(object {field1: data1, field2: data2}):boolean (overload)
