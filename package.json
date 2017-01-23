@@ -1,6 +1,6 @@
 {
   "name": "rediss",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Simple Redis toolkit",
   "main": "dist/index.js",
   "scripts": {
