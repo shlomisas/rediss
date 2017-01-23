@@ -2,5 +2,10 @@ node_modules/*
 .idea/*
 npm-debug.log
 
+build/*
+docs/*
 src/*
 test/*
+.babelrc
+.travis.yml
+Gulpfile.babel.js
