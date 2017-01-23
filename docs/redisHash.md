@@ -14,6 +14,12 @@ let redisHash = new RedisHash('mykey');
 await redisHash.set('field1', 'str1');
 await redisHash.set('field2', {a: 5, b: 6});
 
+// Same
+await redisHash.set({
+    field1: 'str1',
+    field2: {a: 5, b: 6}
+});
+
 let data = await redisHash.get('field2');
 
 console.log(data); 
