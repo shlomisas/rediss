@@ -37,9 +37,9 @@ Remove the ttl of a key to be persist on Redis
 
 > async ttl():void
 
-Will delete the key
+Get the remain time-to-leave of this object
 
-<sub>Wrap [DEL](https://redis.io/commands/del)</sub>
+<sub>Wrap [TTL](https://redis.io/commands/ttl)</sub>
 
 
 > async delete():void
