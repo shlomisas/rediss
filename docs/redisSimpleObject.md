@@ -9,7 +9,7 @@ _Implements most used Redis commands, rest commands will implement during time o
 **Example**
 
 ```javascript
-let redisObj = new RedisObj('mykey');
+let redisObj = new RedisSimpleObject('mykey');
 
 await redisObj.set('str1', 30);
 
