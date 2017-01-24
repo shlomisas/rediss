@@ -2,6 +2,8 @@
  * Created by Shlomi
  */
 
+import RedisHelper from './utils/redisHelper';
+
 import SimpleObject from './types/redisSimpleObject';
 import Set from './types/redisSet';
 import Hash from './types/redisHash';
@@ -13,3 +15,9 @@ export const RedisSet = Set;
 export const RedisHash = Hash;
 export const RedisList = List;
 export const RedisPubSub = PubSub;
+
+export default {
+    setGlobalClient(client){
+        RedisHelper.setGlobalClient(client);
+    }
+};

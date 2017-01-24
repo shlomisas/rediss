@@ -5,6 +5,7 @@
 import chai from 'chai';
 
 import config from '../config';
+import entryPoint from '../../src/index';
 import RedisClient from '../../src/utils/redisClient';
 import RedisList from '../../src/types/redisList';
 
@@ -25,10 +26,12 @@ describe('Redis List', () => {
 
     before(async () => {
         _client = new RedisClient(config.redis);
-        _instance = new RedisList('test_list_key', {client: _client});
+        entryPoint.setGlobalClient(_client);
+
+        _instance = new RedisList('test_list_key');
 
         // Clean current data from Redis
-        return _instance.delete();
+        await _instance.delete();
     });
 
     after(function() {

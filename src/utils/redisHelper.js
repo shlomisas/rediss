@@ -5,8 +5,19 @@
 import {StaticClassError, RedisInvalidDataError} from '../errors';
 
 export default class RedisHelper{
+
+    static _globalClient;
+
     constructor(){
         throw new StaticClassError();
+    }
+
+    static setGlobalClient(client){
+        RedisHelper._globalClient = client;
+    }
+
+    static getGlobalClient(){
+        return RedisHelper._globalClient;
     }
 
     /**

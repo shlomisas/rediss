@@ -2,6 +2,7 @@
  * Created by Shlomi
  */
 
+import RedisHelper from '../utils/redisHelper';
 import {RedisMissingClientError, RedisInvalidCommandError} from '../errors';
 
 export default class RedisBase{
@@ -9,7 +10,7 @@ export default class RedisBase{
     _client;
 
     constructor(client){
-        this._client = client;
+        this._client = client || RedisHelper.getGlobalClient();
     }
 
     /**
