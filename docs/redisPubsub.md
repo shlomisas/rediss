@@ -19,9 +19,14 @@ redisPubsub.subscribe('channel*');
 
 redisPubsub.onMessage((channel, data, pattern) => {
 
-    console.log(channel); // Will print `channel1`
-    console.log(data); // Will print {a: 1, b: 2, c: 3}
-    console.log(pattern); // Will print `channel*`
+    // Will print `channel1`
+    console.log(channel);
+    
+    // Will print {a: 1, b: 2, c: 3}
+    console.log(data);
+    
+    // Will print `channel*`
+    console.log(pattern);
     
 });
 

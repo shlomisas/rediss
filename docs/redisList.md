@@ -15,28 +15,34 @@ await redisList.push('str1');
 await redisList.push({a: 5, b: 6});
 await redisList.push('str2');
 await redisList.push('str3');
-await redisList.push('str4');
-await redisList.unshift('str5');
+const index5 = await redisList.push('str4');
+const index6 = await redisList.unshift('str5');
+
+// Will print `5`
+console.log(index5);
+
+// Will print `6`
+console.log(index6);
 
 let data = await redisHash.getAt(1);
 
-console.log(data); 
 // Will print {a: 5, b: 6}
+console.log(data); 
 
 data = await redisHash.pop();
 
-console.log(data); 
 // Will print 'str4'
+console.log(data); 
 
 data = await redisHash.shift();
 
-console.log(data);
 // Will print 'str5'
+console.log(data);
 
 data = await redisHash.length();
 
-console.log(data); 
 // Will print 4
+console.log(data); 
 ```
 
 ---

@@ -22,15 +22,15 @@ await redisHash.set({
 
 let data = await redisHash.get('field2');
 
+// Will print {a: 5, b: 6}
 console.log(data); 
 
-// Will print {a: 5, b: 6}
 
 data = await redisHash.getAll();
 
+// Will print {field1: 'str1', field2: {a: 5, b: 6}}
 console.log(data); 
 
-// Will print {field1: 'str1', field2: {a: 5, b: 6}}
 ```
 
 ---

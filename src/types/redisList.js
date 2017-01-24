@@ -8,11 +8,11 @@ import RedisBaseKey from './redisBaseKey';
 
 export default class RedisList extends RedisBaseKey{
     async push(data){
-        return !! await this._raw('rpush', this._key, RedisHelper.encodeRedisData(data));
+        return this._raw('rpush', this._key, RedisHelper.encodeRedisData(data));
     }
 
     async unshift(data){
-        return !! await this._raw('lpush', this._key, RedisHelper.encodeRedisData(data));
+        return this._raw('lpush', this._key, RedisHelper.encodeRedisData(data));
     }
 
     async pop(){

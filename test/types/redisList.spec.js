@@ -40,19 +40,19 @@ describe('Redis List', () => {
     it('Should add initial items to the list', async () => {
 
         let res = await _instance.push(_sampleData[0]);
-        assert.deepEqual(res, true, 'should be equal');
+        assert.deepEqual(res, 1, 'should be equal');
 
         res = await _instance.push(_sampleData[1]);
-        assert.deepEqual(res, true, 'should be equal');
+        assert.deepEqual(res, 2, 'should be equal');
 
         res = await _instance.push(_sampleData[2]);
-        assert.deepEqual(res, true, 'should be equal');
+        assert.deepEqual(res, 3, 'should be equal');
 
         res = await _instance.push(_sampleData[3]);
-        assert.deepEqual(res, true, 'should be equal');
+        assert.deepEqual(res, 4, 'should be equal');
 
         res = await _instance.unshift(_sampleData[4]);
-        assert.deepEqual(res, true, 'should be equal');
+        assert.deepEqual(res, 5, 'should be equal');
     });
 
     it('Should get all items from the list', async () => {

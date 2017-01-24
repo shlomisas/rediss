@@ -18,9 +18,9 @@ await redisSet.remove('str2');
 
 let data = await redisSet.getAll();
 
+// Will print ['str1', 'str3', 'str4']
 console.log(data); 
 
-// Will print ['str1', 'str3', 'str4']
 ```
 
 ---

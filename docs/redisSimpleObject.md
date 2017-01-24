@@ -15,9 +15,9 @@ await redisObj.set('str1', 30);
 
 let data = await redisObj.get();
 
+// Will print 'str1'
 console.log(data); 
 
-// Will print 'str1'
 ```
 
 ---
