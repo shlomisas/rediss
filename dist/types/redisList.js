@@ -23,7 +23,7 @@ class RedisList extends _redisBaseKey2.default {
         var _this = this;
 
         return _asyncToGenerator(function* () {
-            return !!(yield _this._raw('rpush', _this._key, _redisHelper2.default.encodeRedisData(data)));
+            return _this._raw('rpush', _this._key, _redisHelper2.default.encodeRedisData(data));
         })();
     }
 
@@ -31,7 +31,7 @@ class RedisList extends _redisBaseKey2.default {
         var _this2 = this;
 
         return _asyncToGenerator(function* () {
-            return !!(yield _this2._raw('lpush', _this2._key, _redisHelper2.default.encodeRedisData(data)));
+            return _this2._raw('lpush', _this2._key, _redisHelper2.default.encodeRedisData(data));
         })();
     }
 
@@ -72,6 +72,14 @@ class RedisList extends _redisBaseKey2.default {
 
         return _asyncToGenerator(function* () {
             return _this7._raw('llen', _this7._key);
+        })();
+    }
+
+    remove(what, count = 0) {
+        var _this8 = this;
+
+        return _asyncToGenerator(function* () {
+            return _this8._raw('lrem', _this8._key, count, what);
         })();
     }
 }
