@@ -34,4 +34,8 @@ export default class RedisList extends RedisBaseKey{
     async length(){
         return this._raw('llen', this._key);
     }
+
+    async remove(what, count = 0){
+        return this._raw('lrem', this._key, count, what);
+    }
 }

@@ -93,3 +93,9 @@ calling the function with the default arguments will return all elements in the 
 Get the length of the list
 
 <sub>Wrap [LLEN](https://redis.io/commands/llen)</sub>
+
+> async remove(what, count = 0):int
+    
+Remove elements from the list by name
+
+<sub>Wrap [LREM](https://redis.io/commands/lrem)</sub>

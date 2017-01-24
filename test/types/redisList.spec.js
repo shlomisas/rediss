@@ -93,6 +93,11 @@ describe('Redis List', () => {
         assert.deepEqual(elem, _sampleData[4], 'should be equal');
     });
 
+    it('Should remove an item', async () => {
+        let res = await _instance.remove(_sampleData[2]);
+        assert.deepEqual(res, 1, 'should be equal');
+    });
+
     it('Should get all items from the list', async () => {
         let elems = await _instance.getAll();
         let length = await _instance.length();
@@ -101,6 +106,5 @@ describe('Redis List', () => {
 
         assert.deepEqual(elems[0], _sampleData[0], 'should be equal');
         assert.deepEqual(elems[1], _sampleData[1], 'should be equal');
-        assert.deepEqual(elems[2], _sampleData[2], 'should be equal');
     });
 });
