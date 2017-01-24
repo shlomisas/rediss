@@ -1,9 +1,13 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 exports.RedisPubSub = exports.RedisList = exports.RedisHash = exports.RedisSet = exports.RedisSimpleObject = undefined;
+
+var _redisHelper = require('./utils/redisHelper');
+
+var _redisHelper2 = _interopRequireDefault(_redisHelper);
 
 var _redisSimpleObject = require('./types/redisSimpleObject');
 
@@ -27,12 +31,19 @@ var _redisPubsub2 = _interopRequireDefault(_redisPubsub);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const RedisSimpleObject = exports.RedisSimpleObject = _redisSimpleObject2.default; /**
-                                                                                    * Created by Shlomi
-                                                                                    */
+/**
+ * Created by Shlomi
+ */
 
+const RedisSimpleObject = exports.RedisSimpleObject = _redisSimpleObject2.default;
 const RedisSet = exports.RedisSet = _redisSet2.default;
 const RedisHash = exports.RedisHash = _redisHash2.default;
 const RedisList = exports.RedisList = _redisList2.default;
 const RedisPubSub = exports.RedisPubSub = _redisPubsub2.default;
+
+exports.default = {
+    setGlobalClient(client) {
+        _redisHelper2.default.setGlobalClient(client);
+    }
+};
 //# sourceMappingURL=index.js.map

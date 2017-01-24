@@ -7,8 +7,17 @@ Object.defineProperty(exports, "__esModule", {
 var _errors = require('../errors');
 
 class RedisHelper {
+
     constructor() {
         throw new _errors.StaticClassError();
+    }
+
+    static setGlobalClient(client) {
+        RedisHelper._globalClient = client;
+    }
+
+    static getGlobalClient() {
+        return RedisHelper._globalClient;
     }
 
     /**
