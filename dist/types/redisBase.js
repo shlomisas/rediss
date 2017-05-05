@@ -42,6 +42,11 @@ class RedisBase {
             return _this._client[cmd](args);
         })();
     }
+
+    setClient(client) {
+        this._client = client;
+        return this;
+    }
 }
 exports.default = RedisBase;
 module.exports = exports['default'];
