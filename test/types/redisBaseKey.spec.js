@@ -79,4 +79,18 @@ describe('Redis Base Key', () => {
         let res = await _instance.delete();
         assert.deepEqual(res, true, 'should be equal');
     });
+
+    it('Should set a client', async () => {
+
+        const expected = 5;
+        const client = {
+            foo(){
+                return expected;
+            }
+        };
+
+        _instance.setClient(client);
+
+        assert.deepEqual(_instance._client.foo(), 5, 'should be equal');
+    });
 });

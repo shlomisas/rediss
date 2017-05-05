@@ -28,4 +28,9 @@ export default class RedisBase{
         let args = [...arguments].splice(1);
         return this._client[cmd](args);
     }
+
+    setClient(client){
+        this._client = client;
+        return this;
+    }
 }

@@ -23,7 +23,7 @@ Options includes:
     
 - `client`, an instance of some Redis client that exposed all Redis commands as methods names, e.g. [IORedis](https://www.npmjs.com/package/ioredis)
 
-You cna set a global client to the library to avoid the need to redefine the client for each new instance, here is an example:
+You can set a global client to the library to avoid the need to redefine the client for each new instance, here is an example:
 
 ```javascript
 
@@ -37,6 +37,21 @@ let list = new RedisList('someKey');
 await list.push('bla bla bla');
 
 ````
+
+You can also set the client for specific instance like this:
+
+```javascript
+
+import RedisClient from 'ioredis';
+import {RedisList} from 'rediss';
+
+let list = new RedisList('someKey');
+
+list.setClient(new RedisClient());
+await list.push('bla bla bla');
+
+````
+
 
 > async expire(ttl:number):boolean
 
