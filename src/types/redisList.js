@@ -31,6 +31,10 @@ export default class RedisList extends RedisBaseKey{
         return RedisHelper.decodeArrayOfRedisData(await this._raw('lrange', this._key, start, length));
     }
 
+    async splice(start, length = -1){
+        return RedisHelper.decodeArrayOfRedisData(await this._raw('ltrim', this._key, start, length));
+    }
+
     async length(){
         return this._raw('llen', this._key);
     }

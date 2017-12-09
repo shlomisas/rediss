@@ -24,22 +24,22 @@ console.log(index5);
 // Will print `6`
 console.log(index6);
 
-let data = await redisHash.getAt(1);
+let data = await redisList.getAt(1);
 
 // Will print {a: 5, b: 6}
 console.log(data); 
 
-data = await redisHash.pop();
+data = await redisList.pop();
 
 // Will print 'str4'
 console.log(data); 
 
-data = await redisHash.shift();
+data = await redisList.shift();
 
 // Will print 'str5'
 console.log(data);
 
-data = await redisHash.length();
+data = await redisList.length();
 
 // Will print 4
 console.log(data); 

@@ -6,6 +6,19 @@
 
 Use Redis' commands straight-forward, with no need to remember the complicated Redis API in mind.
 
+## Motivation
+
+```javascript
+let redisList = new RedisList('mykey');
+
+let index = await redisList.push('str1');
+let data = await redisList.pop();
+
+console.log(index); // Will print 0
+console.log(data); // Will print 'str1' 
+
+```
+
 ## Contribute
 
 Since wrap all Redis commands can take long time, you're welcome to contribute ;)
