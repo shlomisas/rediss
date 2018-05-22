@@ -29,11 +29,6 @@ export default class RedisSimpleObject extends RedisBaseKey{
         return RedisHelper.decodeRedisData(await this._raw('get', this._key));
     }
 
-    async mget(){
-        this._beforeAction();
-        return RedisHelper.decodeRedisData(await this._raw('get', this._key));
-    }
-
     async mget(keys){
         this._beforeAction();
         return RedisHelper.decodeRedisData(await this._raw('mget', ...keys));
