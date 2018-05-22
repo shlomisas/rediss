@@ -11,7 +11,7 @@ _Implements most used Redis commands, rest commands will implement during time o
 ```javascript
 let redisObj = new RedisSimpleObject('mykey');
 
-await redisObj.set('str1', 30);
+await redisObj.set('str1');
 
 let data = await redisObj.get();
 
