@@ -52,6 +52,13 @@ export default class RedisHelper{
 
         if(!isNaN(data)) return Number(data);
         if(data === 'true' || data === 'false') return data === 'true';
+        if(Array.isArray(data)) {
+            try{
+                return data.map(element => this.decodeRedisData(element));
+            }catch(e){
+                // no-op
+            }
+        }
 
         try{
             return JSON.parse(data);

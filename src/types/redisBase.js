@@ -20,12 +20,11 @@ export default class RedisBase{
         if(!this._client) throw new RedisMissingClientError();
     }
 
-    async _raw(cmd){
+    async _raw(cmd, ...args){
         this._beforeAction();
 
         if(typeof this._client[cmd] !== 'function') throw new RedisInvalidCommandError();
 
-        let args = [...arguments].splice(1);
         return this._client[cmd](args);
     }
 
