@@ -1,1 +1,0 @@
-{"version":3,"sources":["utils/redisClient.js"],"names":["RedisClient"],"mappings":";;;;;;AAIA;;;;;;AAEA;AACe,MAAMA,WAAN,2BAA+B;kBAAzBA,W,EAPrB","file":"redisClient.js","sourcesContent":["/**\r\n * Created by Shlomi\r\n */\r\n\r\nimport Redis from 'ioredis';\r\n\r\n// Singleton class\r\nexport default class RedisClient extends Redis{}"]}
