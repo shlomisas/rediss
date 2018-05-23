@@ -32,16 +32,11 @@ Set a value into redis object, input data can be any type
 
 <sub>Wrap [SET](https://redis.io/commands/set)</sub>
 
-> async get():mixed
+> async get(array data):mixed
 
 Will return the data from redis, if what stored is JSONable the data returned will convert back to a JS Object
 
 <sub>Wrap [GET](https://redis.io/commands/get)</sub>
-
-> async mget():mixed
-
-Will return the multiple data from redis, if what stored is JSONable the data returned will convert back to a JS Object
-
 <sub>Wrap [GET](https://redis.io/commands/mget)</sub>
 
 > async getTTL():mixed

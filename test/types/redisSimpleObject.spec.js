@@ -63,12 +63,35 @@ describe('Redis Simple Object', () => {
         }, _ttl);
         await instance2.set('3', _ttl);
 
-        let res = await _instance.mget(['test_rso_key', 'test_rso_key1']);
+        let res = await _instance.get(['test_rso_key', 'test_rso_key1']);
 
         assert.deepEqual(res, [{
             a: 5,
             b: 6
         }, 3], 'should be equal');
+
+    });
+
+    it('Should get only relevant multiple data', async () => {
+
+        let ttl = 1;
+        let instance1 = new RedisSimpleObject('test_rso_key', {client: _client});
+        let instance2 = new RedisSimpleObject('test_rso_key1', {client: _client});
+
+        await instance1.set({
+            a: 5,
+            b: 6
+        }, _ttl);
+        await instance2.set('3', ttl);
+
+        await new Promise((resolve, reject) => setTimeout(resolve, ttl*1000));
+
+        let res = await _instance.get(['test_rso_key', 'test_rso_key1']);
+
+        assert.deepEqual(res, [{
+            a: 5,
+            b: 6
+        }, null], 'should be equal');
 
     });
 
