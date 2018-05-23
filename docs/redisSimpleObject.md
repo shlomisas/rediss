@@ -16,7 +16,7 @@ await redisObj.set('str1');
 let data = await redisObj.get();
 
 // Will print 'str1'
-console.log(data); 
+console.log(data);
 
 ```
 
@@ -27,16 +27,17 @@ console.log(data);
 _Inherit more methods from [Redis Base](redisBase.md)_
 
 > async set(mixed data):boolean
-    
+
 Set a value into redis object, input data can be any type
 
 <sub>Wrap [SET](https://redis.io/commands/set)</sub>
 
-> async get():mixed
+> async get(array data):mixed
 
 Will return the data from redis, if what stored is JSONable the data returned will convert back to a JS Object
 
 <sub>Wrap [GET](https://redis.io/commands/get)</sub>
+<sub>Wrap [GET](https://redis.io/commands/mget)</sub>
 
 > async getTTL():mixed
 
