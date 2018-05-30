@@ -48,7 +48,7 @@ describe('Redis Base Key', () => {
 
     it('Should set an invalid the key TTL', async () => {
         try{
-            _instance.expire(-1);
+            await _instance.expire(-1);
         }catch(e){
             assert.deepEqual(e.message, `Invalid TTL value`);
         }
