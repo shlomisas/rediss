@@ -31,7 +31,7 @@ export default class RedisHash extends RedisBaseKey{
 
     async get(fieldName){
         this._beforeAction();
-        return this._raw('hget', this._key, fieldName);
+        return RedisHelper.decodeRedisData( await this._raw('hget', this._key, fieldName));
     }
 
     async exists(fieldName){
