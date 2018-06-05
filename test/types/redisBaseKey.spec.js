@@ -80,6 +80,19 @@ describe('Redis Base Key', () => {
         assert.deepEqual(res, true, 'should be equal');
     });
 
+    it('Should delete bunch of keys', async () => {
+        let instance1 = new RedisSimpleObject('test_rso_key', {client: _client});
+        let instance2 = new RedisSimpleObject('test_rso_key1', {client: _client});
+
+        await instance1.set({
+            a: 5,
+            b: 6
+        });
+        await instance2.set('3');
+        let res = await _instance.delete(['test_rso_key', 'test_rso_key1']);
+        assert.deepEqual(res, true, 'should be equal');
+    });
+
     it('Should set a client', async () => {
 
         const expected = 5;

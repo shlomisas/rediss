@@ -30,8 +30,12 @@ export default class RedisBaseKey extends RedisBase{
         return this._raw('ttl', this._key);
     }
 
-    async delete(){
+    async delete(keys){
         this._beforeAction();
+        if (keys) {
+            await this._raw('del', ...keys);
+            return true;
+        }
         return !!await this._raw('del', this._key);
     }
 }
