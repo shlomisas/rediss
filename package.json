@@ -6,6 +6,7 @@
   "scripts": {
     "prepublishOnly": "npm run build",
     "build": "rimraf dist && babel src --out-dir dist",
+    "dev": "rimraf dist && babel src --out-dir dist --watch",
     "test": "mocha --require babel-core/register --timeout 15000 test/**/*.spec.js"
   },
   "repository": {
@@ -35,7 +36,8 @@
     "babel-preset-stage-0": "^6.16.0",
     "babel-register": "^6.18.0",
     "chai": "^4.1.2",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "rimraf": "^2.6.3"
   },
   "dependencies": {
     "ioredis": "^3.2.2",

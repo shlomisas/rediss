@@ -99,3 +99,15 @@ Get the length of the list
 Remove elements from the list by name
 
 <sub>Wrap [LREM](https://redis.io/commands/lrem)</sub>
+
+> async exists():boolean
+
+Will return boolean answer if the object exists
+
+<sub>Wrap [GET](https://redis.io/commands/exists)</sub>
+
+> async getLast():boolean
+
+Will return the last item form the list (that pushed recently)
+
+<sub>A combination of `this.getLength` and then `this.getAt(length - 1)`</sub>

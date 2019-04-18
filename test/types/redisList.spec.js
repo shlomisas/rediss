@@ -23,12 +23,13 @@ describe('Redis List', () => {
 
     let _instance;
     let _client;
+    let _key = 'test_list_key';
 
     before(async () => {
         _client = new RedisClient(config.redis);
         entryPoint.setGlobalClient(_client);
 
-        _instance = new RedisList('test_list_key');
+        _instance = new RedisList(_key);
 
         // Clean current data from Redis
         await _instance.delete();
@@ -76,9 +77,19 @@ describe('Redis List', () => {
         assert.deepEqual(elem, _sampleData[3], 'should be equal');
     });
 
+    it('Should return true since the list exists', async () => {
+        let elem = await _instance.exists();
+        assert.deepEqual(elem, true, 'should be true');
+    });
+
     it('Should get the size of the list', async () => {
         let elem = await _instance.length();
         assert.deepEqual(elem, 5, 'should be equal');
+    });
+
+    it('Should get the last item from the list', async () => {
+        let elem = await _instance.getLast();
+        assert.deepEqual(elem, _sampleData[3], 'should be equal');
     });
 
     it('Should pop the last item from the list', async () => {

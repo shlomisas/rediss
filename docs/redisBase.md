@@ -77,3 +77,9 @@ Get the remain time-to-leave of this object
 Will delete the key
 
 <sub>Wrap [DEL](https://redis.io/commands/del)</sub>
+
+> async exists():boolean
+
+Will return boolean answer if the object exists
+
+<sub>Wrap [GET](https://redis.io/commands/exists)</sub>

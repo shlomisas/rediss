@@ -46,6 +46,11 @@ describe('Redis Base Key', () => {
         assert.approximately(_origTTL, res, 0, 'should be in between');
     });
 
+    it('Should check existence of the key', async () => {
+        let res = await _instance.exists(_sampleData[0]);
+        assert.deepEqual(res, true, 'should be equal');
+    });
+
     it('Should set an invalid the key TTL', async () => {
         try{
             await _instance.expire(-1);
