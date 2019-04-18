@@ -26,9 +26,10 @@ console.log(data);
 
 _Inherit more methods from [Redis Base](redisBase.md)_
 
-> async set(mixed data):boolean
+> async set(mixed data, ttl):boolean
 
 Set a value into redis object, input data can be any type
+You can optionally provide TTL in seconds to expire the object when the time comes
 
 <sub>Wrap [SET](https://redis.io/commands/set)</sub>
 
@@ -44,3 +45,9 @@ Will return the data from redis, if what stored is JSONable the data returned wi
 Will return the remaining time to live of of this object
 
 <sub>Wrap [GET](https://redis.io/commands/get)</sub>
+
+> async exists():boolean
+
+Will return boolean answer if the object exists
+
+<sub>Wrap [GET](https://redis.io/commands/exists)</sub>

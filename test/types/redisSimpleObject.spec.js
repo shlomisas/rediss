@@ -52,13 +52,13 @@ describe('Redis Simple Object', () => {
 
     });
 
-    it('Should check data existance', async () => {
+    it('Should check data existence', async () => {
         let res = await _instance.exists();
 
         assert.equal(res, true, 'should be equal');
     });
 
-    it('Should check fake data existance', async () => {
+    it('Should check fake data existence', async () => {
         const instance = new RedisSimpleObject('fake_rso_key', {client: _client});
 
         let res = await instance.exists();

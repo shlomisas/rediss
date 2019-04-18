@@ -38,4 +38,9 @@ export default class RedisBaseKey extends RedisBase{
         }
         return !!await this._raw('del', this._key);
     }
+
+    async exists(){
+        this._beforeAction();
+        return !!await this._raw('exists', this._key);
+    }
 }

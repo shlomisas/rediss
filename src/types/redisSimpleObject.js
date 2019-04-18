@@ -31,9 +31,4 @@ export default class RedisSimpleObject extends RedisBaseKey{
         }
         return RedisHelper.decodeRedisData(await this._raw('get', this._key));
     }
-
-    async exists(){
-        this._beforeAction();
-        return !!await this._raw('exists', this._key);
-    }
 }
