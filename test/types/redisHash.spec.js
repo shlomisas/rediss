@@ -1,12 +1,8 @@
-/**
- * Created by Shlomi
- */
+const chai = require('chai');
 
-import chai from 'chai';
-
-import config from '../config';
-import RedisClient from '../../src/utils/redisClient';
-import RedisHash from '../../src/types/redisHash';
+const config = require('../config');
+const RedisClient = require('../../src/utils/redisClient');
+const RedisHash  = require('../../src/types/redisHash');
 
 let assert = chai.assert;
 

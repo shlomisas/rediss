@@ -1,12 +1,8 @@
-/**
- * Created by Shlomi
- */
+const chai = require('chai');
 
-import chai from 'chai';
-
-import config from '../config';
-import RedisClient from '../../src/utils/redisClient';
-import RedisSet from '../../src/types/redisSet';
+const config = require('../config');
+const RedisClient = require('../../src/utils/redisClient');
+const RedisSet = require('../../src/types/redisSet');
 
 let assert = chai.assert;
 
@@ -16,7 +12,6 @@ describe('Redis Set', () => {
     let _objValue = {a: 1, b: 2};
     let _booleanValue = false;
 
-    let ttl = 2; // in seconds
     let _instance;
     let _client;
 

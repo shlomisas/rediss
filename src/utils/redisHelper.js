@@ -1,13 +1,6 @@
-/**
- * Created by Shlomi
- */
+const { StaticClassError, RedisInvalidDataError } = require('../errors');
 
-import {StaticClassError, RedisInvalidDataError} from '../errors';
-
-export default class RedisHelper{
-
-    static _globalClient;
-
+module.exports = class RedisHelper {
     constructor(){
         throw new StaticClassError();
     }

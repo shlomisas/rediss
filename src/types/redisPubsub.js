@@ -1,15 +1,7 @@
-/**
- * Created by Shlomi
- */
+const RedisPub = require('./redisPub');
+const RedisSub = require('./redisSub');
 
-import RedisPub from './redisPub';
-import RedisSub from './redisSub';
-
-export default class RedisPubSub{
-
-    _redisPub;
-    _redisSub;
-
+module.exports = class RedisPubSub {
     constructor(pubClient, subClient){
         if(pubClient){
             this._redisPub = new RedisPub(pubClient);

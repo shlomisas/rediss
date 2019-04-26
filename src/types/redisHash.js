@@ -1,12 +1,7 @@
-/**
- * Created by Shlomi
- */
+const RedisHelper = require('../utils/redisHelper');
+const RedisBaseKey = require('./redisBaseKey');
 
-import RedisHelper from '../utils/redisHelper';
-
-import RedisBaseKey from './redisBaseKey';
-
-export default class RedisHash extends RedisBaseKey{
+module.exports = class RedisHash extends RedisBaseKey{
     async set(fieldName, data){
         this._beforeAction();
 

@@ -1,10 +1,5 @@
-/**
- * Created by Shlomi
- */
-
-import chai from 'chai';
-
-import RedisHelper from '../../src/utils/redisHelper';
+const chai = require('chai');
+const RedisHelper = require('../../src/utils/redisHelper');
 
 let assert = chai.assert;
 
