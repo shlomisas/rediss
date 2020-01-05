@@ -24,8 +24,8 @@ console.log(data); // Will print 'str1'
 Since wrap all Redis commands can take long time, you're welcome to contribute ;)
 
 ## Support
-
-Tested on Redis 2.8.2400
+* Node > 10
+* Tested on Redis 2.8.2400
 
 ## Install
 
