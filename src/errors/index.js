@@ -1,39 +1,36 @@
-/**
- * Created by Shlomi
- */
+const VError = require('verror');
 
-import VError from 'verror';
+class BaseError extends VError{}
+class RedisError extends BaseError{}
+class RedisInvalidDataError extends RedisError {
 
-export class BaseError extends VError{}
-export class StaticClassError extends BaseError{
-    constructor(){
-        super('Static class cannot initiate');
+    constructor(data){
+        super('Invalid data for Redis');
+        this._data = data;
     }
 }
-
-export class RedisError extends BaseError{}
-export class RedisMissingClientError extends RedisError{
-    constructor(){
-        super('Redis client not found');
-    }
-}
-
-export class RedisInvalidCommandError extends RedisError{
-
-    _cmd;
+class RedisInvalidCommandError extends RedisError {
 
     constructor(cmd){
         super('Invalid Redis command');
         this._cmd = cmd;
     }
 }
-
-export class RedisInvalidDataError extends RedisError{
-
-    _data;
-
-    constructor(data){
-        super('Invalid data for Redis');
-        this._data = data;
+class RedisMissingClientError extends RedisError{
+    constructor(){
+        super('Redis client not found');
     }
+}
+class StaticClassError extends BaseError{
+    constructor(){
+        super('Static class cannot initiate');
+    }
+}
+module.exports = {
+    RedisInvalidDataError,
+    RedisInvalidCommandError,
+    RedisMissingClientError,
+    RedisError,
+    StaticClassError,
+    BaseError
 }

@@ -1,23 +1,17 @@
-/**
- * Created by Shlomi
- */
+const RedisHelper = require('./utils/redisHelper');
+const SimpleObject = require('./types/redisSimpleObject');
+const Set = require('./types/redisSet');
+const Hash = require('./types/redisHash');
+const List = require('./types/redisList');
+const PubSub = require('./types/redisPubsub');
 
-import RedisHelper from './utils/redisHelper';
-
-import SimpleObject from './types/redisSimpleObject';
-import Set from './types/redisSet';
-import Hash from './types/redisHash';
-import List from './types/redisList';
-import PubSub from './types/redisPubsub';
-
-export const RedisSimpleObject = SimpleObject;
-export const RedisSet = Set;
-export const RedisHash = Hash;
-export const RedisList = List;
-export const RedisPubSub = PubSub;
-
-export default {
+module.exports = {
     setGlobalClient(client){
         RedisHelper.setGlobalClient(client);
-    }
+    },
+    RedisSimpleObject: SimpleObject,
+    RedisSet: Set,
+    RedisHash: Hash,
+    RedisList: List,
+    RedisPubSub: PubSub
 };

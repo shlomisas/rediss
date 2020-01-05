@@ -1,12 +1,8 @@
-/**
- * Created by Shlomi
- */
+const chai = require('chai');
 
-import chai from 'chai';
-
-import config from '../config';
-import RedisClient from '../../src/utils/redisClient';
-import RedisSimpleObject from '../../src/types/redisSimpleObject';
+const config = require('../config');
+const RedisClient = require('../../src/utils/redisClient');
+const RedisSimpleObject  = require('../../src/types/redisSimpleObject');
 
 let assert = chai.assert;
 
@@ -98,7 +94,7 @@ describe('Redis Simple Object', () => {
         }, _ttl);
         await instance2.set('3', ttl);
 
-        await new Promise((resolve, reject) => setTimeout(resolve, ttl*1000));
+        await new Promise((resolve) => setTimeout(resolve, ttl*1000));
 
         let res = await _instance.get(['test_rso_key', 'test_rso_key1']);
 
@@ -120,7 +116,7 @@ describe('Redis Simple Object', () => {
 
     it('Should not get an expired data', async () => {
 
-        await new Promise((resolve, reject) => {
+        await new Promise((resolve) => {
             setTimeout(resolve, _ttl*1000);
         });
 

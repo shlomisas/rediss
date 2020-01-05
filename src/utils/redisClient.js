@@ -2,7 +2,7 @@
  * Created by Shlomi
  */
 
-import Redis from 'ioredis';
+const Redis = require('ioredis');
 
 // Singleton class
-export default class RedisClient extends Redis{}
+module.exports = class RedisClient extends Redis{}

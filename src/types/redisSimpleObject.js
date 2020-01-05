@@ -1,12 +1,7 @@
-/**
- * Created by Shlomi
- */
+const RedisHelper = require('../utils/redisHelper');
+const RedisBaseKey = require('./redisBaseKey');
 
-import RedisHelper from '../utils/redisHelper';
-
-import RedisBaseKey from './redisBaseKey';
-
-export default class RedisSimpleObject extends RedisBaseKey{
+module.exports = class RedisSimpleObject extends RedisBaseKey {
     async set(data, ttl){
         this._beforeAction();
         data = RedisHelper.encodeRedisData(data);

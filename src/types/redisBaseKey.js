@@ -1,12 +1,6 @@
-/**
- * Created by Shlomi
- */
+const RedisBase = require('./redisBase');
 
-import RedisBase from './redisBase';
-
-export default class RedisBaseKey extends RedisBase{
-
-    _key;
+module.exports = class RedisBaseKey extends RedisBase {
 
     constructor(key, options = {}){
         super(options.client);

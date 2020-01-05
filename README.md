@@ -1,6 +1,6 @@
 # **User Friendly Redis Toolkit**
 
-[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] 
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] ![node](https://img.shields.io/node/v/rediss.svg)
 <!--[![Coveralls Status][coveralls-image]][coveralls-url] -->
 <!--[![OpenCollective Backers][backer-badge]][backer-url] [![OpenCollective Sponsors][sponsor-badge]][sponsor-url] -->
 
@@ -15,7 +15,7 @@ let index = await redisList.push('str1');
 let data = await redisList.pop();
 
 console.log(index); // Will print 0
-console.log(data); // Will print 'str1' 
+console.log(data); // Will print 'str1'
 
 ```
 
@@ -27,15 +27,15 @@ Since wrap all Redis commands can take long time, you're welcome to contribute ;
 
 Tested on Redis 2.8.2400
 
-## Install 
+## Install
 
 `npm i rediss -S`
 
-## Docs 
+## Docs
 
 ### **Data types**
 
-_Note: objects can save mixed JavaScript data, it's means that when saving a value will fetch exactly as saved - with the same type, 
+_Note: objects can save mixed JavaScript data, it's means that when saving a value will fetch exactly as saved - with the same type,
 objects will internally `JSON.stringify` before save and `JSON.parse` after fetch_
 
 * [Redis Base](docs/redisBase.md) (abstract)

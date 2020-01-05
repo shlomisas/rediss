@@ -1,13 +1,7 @@
-/**
- * Created by Shlomi
- */
+const RedisHelper = require('../utils/redisHelper');
+const RedisBase = require('./redisBase');
 
-import RedisHelper from '../utils/redisHelper';
-
-import RedisBase from './redisBase';
-
-export default class RedisSub extends RedisBase{
-
+module.exports = class RedisSub extends RedisBase {
     async subscribe(channel){
         let cmd = RedisHelper.isGlobString(channel) ? 'psubscribe' : 'subscribe';
         return !!await this._raw(cmd, channel);

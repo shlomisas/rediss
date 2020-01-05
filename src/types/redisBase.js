@@ -1,14 +1,7 @@
-/**
- * Created by Shlomi
- */
+const RedisHelper = require('../utils/redisHelper');
+const { RedisMissingClientError, RedisInvalidCommandError } = require('../errors');
 
-import RedisHelper from '../utils/redisHelper';
-import {RedisMissingClientError, RedisInvalidCommandError} from '../errors';
-
-export default class RedisBase{
-
-    _client;
-
+module.exports = class RedisBase{
     constructor(client){
         this._client = client || RedisHelper.getGlobalClient();
     }
