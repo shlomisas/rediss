@@ -15,7 +15,9 @@
     "Simple",
     "OOP"
   ],
-  "engines" : { "node" : ">=10.0" },
+  "engines": {
+    "node": ">=10.0"
+  },
   "author": {
     "name": "Shlomi Sasson",
     "email": "shlomi@sasson.me"
