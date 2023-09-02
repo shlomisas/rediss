@@ -22,6 +22,10 @@ module.exports = class RedisList extends RedisBaseKey {
         return RedisHelper.decodeRedisData(await this._raw('lindex', this._key, index));
     }
 
+    async updateAt(index, data) {
+        return RedisHelper.decodeRedisData(await this._raw('lset', this._key, index, RedisHelper.encodeRedisData(data)));
+    }
+
     async getAll(start = 0, length = -1){
         return RedisHelper.decodeArrayOfRedisData(await this._raw('lrange', this._key, start, length));
     }

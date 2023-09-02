@@ -73,6 +73,22 @@ describe('Redis List', () => {
         assert.deepEqual(elem, _sampleData[3], 'should be equal');
     });
 
+    it('Should update elements in the list', async () => {
+
+        let elem = await _instance.getAt(0);
+
+        const oldVal = elem;
+        const newVal = 'rrrrrrrr';
+
+        await _instance.updateAt(0, newVal);
+        elem = await _instance.getAt(0);
+        assert.deepEqual(elem, newVal, 'should be equal');
+
+        await _instance.updateAt(0, oldVal);
+        elem = await _instance.getAt(0);
+        assert.deepEqual(elem, _sampleData[4], 'should be equal');
+    });
+
     it('Should return true since the list exists', async () => {
         let elem = await _instance.exists();
         assert.deepEqual(elem, true, 'should be true');

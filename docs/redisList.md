@@ -26,6 +26,11 @@ console.log(index6);
 
 let data = await redisList.getAt(1);
 
+await redisList.updateAt(1, 'rrr');
+
+// Will print 'rrr'
+let data = await redisList.getAt(1);
+
 // Will print {a: 5, b: 6}
 console.log(data); 
 
@@ -80,6 +85,12 @@ Pop the first element of the list
 Returns the element at `index` in the list
 
 <sub>Wrap [LINDEX](https://redis.io/commands/lindex)</sub>
+
+> async updateAt(int index, object data):mixed
+
+Update the element at `index` in the list
+
+<sub>Wrap [LSET](https://redis.io/commands/lset/)</sub>
 
 > async getAll(int start = 0, int length = -1):array
     
